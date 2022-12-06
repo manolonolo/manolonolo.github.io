@@ -10,7 +10,6 @@ export default function Header() {
   const presentation = "I'm really passionate about developing web platforms and working with my teamates to accomplish a common objective. Here you can check out some of my work as well as means of contact if you wish to reach out to me. I'm looking forward to work with you and keep growing as a dev!"
   const [text, setText] = useState(''); //letter that is currently being displayed
 
-
   useEffect(() => {
     //function responsible for typing the text
     const writer = setInterval(() => {
@@ -24,7 +23,6 @@ export default function Header() {
     let updatedText = presentation.substring(0, text.length + 1) //letter advances
 
     setText(updatedText);
-
   }
 
   return (
