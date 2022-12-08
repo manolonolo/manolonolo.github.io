@@ -34,7 +34,7 @@ export default function Projects(){
                     <h2>Projects</h2>
                     <p>This are some of my most outstanding projects. Take a look!</p>
                     <Tab.Container id="projects-tabs" defaultActiveKey='first'>
-                    <Nav variant="pills" defaultActiveKey='/home'>
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                         <Nav.Item>
                             <Nav.Link eventKey='first'>Tab One</Nav.Link>
                         </Nav.Item>

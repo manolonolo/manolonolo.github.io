@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import 'react-multi-carousel/lib/styles.css';
@@ -8,24 +8,12 @@ import meter3 from '../assets/img/meter3.svg';
 import colorSharp from '../assets/img/color-sharp.png';
 
 export default function Skills (){
-    const responsive = {
-        superLargeDesktop: {
-            breakpoint: {max: 4000, min: 3000},
-            items: 5
-        },
-        desktop: {
-            breakpoint: {max: 3000, min: 1024},
-            items: 3
-        },
-        tablet: {
-            breakpoint: {max: 1024, min: 464},
-            items: 2
-        },
-        mobile: {
-            breakpoint: {max: 464, min: 0},
-            items: 1
-        }
-    }
+
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+    };  
 
     return(
         <section className="skill" id="skills">
@@ -36,20 +24,22 @@ export default function Skills (){
                             <h2>
                                 Skills
                             </h2>
-                            <p>This is the Skill.<br></br>This is the Skill.<br></br>This is the Skill.<br></br></p>
-                            <Carousel responsive={responsive} className='skill-slider'>
-                                <div className='item'>
+                            <Carousel className='skill-slider' activeIndex={index} onSelect={handleSelect}>
+                                <Carousel.Item className="item">
                                     <img src={meter1} alt="Carousel Image"/>
                                     <h5>Web Development</h5>
-                                </div>
-                                <div className='item'>
+                                    <p>I started my roadtrip in the IT world with the objective of becoming a Web Developer.<br></br>Now it's a reality and I keep on learning and adding new tools to my collection that help me explore this vast field.<br></br></p>
+                                </Carousel.Item>
+                                <Carousel.Item className='item'>
                                     <img src={meter2} alt="Carousel Image"/>
                                     <h5>Web Design</h5>
-                                </div>
-                                <div className='item'>
+                                    <p>While developing Web Platforms I found it's design and User Interface to be of outmost importance.<br></br>It's because of this that I try to prioritize accesibility and a friendly interface for the user when designing a web platform.<br></br>This is, in my opinion, the most important aspect of Web Development, and something I try to improve on every project I make.<br></br></p>
+                                </Carousel.Item>
+                                <Carousel.Item className='item'>
                                     <img src={meter3} alt="Carousel Image"/>
                                     <h5>Teamwork</h5>
-                                </div>
+                                    <p>Working with my colleagues is, without a doubt, one of the things I enjoy the most.<br></br>Not only as a dev, but also as a person.<br></br>Getting to know new people, their personalities and ways of thinking is something I am always excited to experience when starting a new group project.<br></br></p>
+                                </Carousel.Item>
                             </Carousel>
                         </div>
                     </Col>
