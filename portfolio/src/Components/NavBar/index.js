@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import navIcon2 from '../assets/img/icons8-github.svg';
 import '../NavBar/index.css';
 
 export default function NavBar() {
@@ -46,10 +45,9 @@ export default function NavBar() {
                 <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
               </Nav>
               <span className='nav-bar-text'>
-                <div className='social-icon'>
-                    <img src={navIcon1} alt=''/>
-                    <img src={navIcon2} alt=''/>
-                    <img src={navIcon3} alt=''/>
+                <div className="social-icon">
+                  <a href="https://www.linkedin.com/in/pablo-manolaki-110522158/"><img src={navIcon1}/></a>
+                  <a href="https://github.com/manolonolo"><img src={navIcon2}/></a>
                 </div>
               </span>
             </Navbar.Collapse>
