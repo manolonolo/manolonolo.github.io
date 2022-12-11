@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Col, Container, Nav, Row } from 'react-bootstrap';
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import headerImg from '../assets/img/header-img.svg';
-import { Link } from 'react-router-dom';
 import'./index.css'
 
 export default function Header() {

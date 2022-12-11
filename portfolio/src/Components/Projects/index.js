@@ -10,8 +10,8 @@ export default function Projects(){
 
     const projects = [
         {
-            title: 'Project 1',
-            description: 'This is Project 1',
+            title: 'Countries App',
+            description: 'A SPA that shows a list of countries. You can check their details, sort them by criteria, search and add activities to each country. Built using: React, Redux, Express, Node.JS, PostgreSQL and Sequelize.',
             imgUrl: projImg1
         },
         {
@@ -36,7 +36,7 @@ export default function Projects(){
                     <Tab.Container id="projects-tabs" defaultActiveKey='first'>
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                         <Nav.Item>
-                            <Nav.Link eventKey='first'>Tab One</Nav.Link>
+                            <Nav.Link eventKey='first'>Countries App</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link eventKey='second'>Tab Two</Nav.Link>
@@ -47,20 +47,20 @@ export default function Projects(){
                     </Nav>
                     <Tab.Content>
                         <Tab.Pane eventKey='first'>
-                            <Row>
-                                {
-                                    projects.map((project, index) => {
-                                        return(
-                                            <ProjectCard
-                                                key={index}
-                                                {...project}/>
-                                        )
-                                    })
-                                }
+                            <Row className="justify-content-center">
+                                <ProjectCard title={projects[0].title} description={projects[0].description} imgUrl={projects[0].imgUrl}/>
                             </Row>
                         </Tab.Pane>
-                        <Tab.Pane eventKey='second'>Text Two</Tab.Pane>
-                        <Tab.Pane eventKey='third'>Text Three</Tab.Pane>
+                        <Tab.Pane eventKey='second'>
+                            <Row className="justify-content-center">
+                                <ProjectCard title={projects[1].title} description={projects[1].description} imgUrl={projects[1].imgUrl}/>
+                            </Row>
+                        </Tab.Pane>
+                        <Tab.Pane eventKey='third'>
+                            <Row className="justify-content-center">
+                                <ProjectCard title={projects[2].title} description={projects[2].description} imgUrl={projects[2].imgUrl}/>
+                            </Row>
+                        </Tab.Pane>
                     </Tab.Content>
                     </Tab.Container>
                     </Col>
