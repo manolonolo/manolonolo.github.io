@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/icons8-github.svg';
-import '../NavBar/index.css';
+import navIcon2 from '../assets/img/icons8-github.svg'
 
 export default function NavBar() {
 
@@ -32,9 +30,6 @@ export default function NavBar() {
     return (
         <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
           <Container>
-            <Navbar.Brand href="#home">
-                <img src={logo} alt='logo' />
-            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" >
                 <span className='navbar-toggler-icon'></span>
             </Navbar.Toggle>
@@ -46,8 +41,8 @@ export default function NavBar() {
               </Nav>
               <span className='nav-bar-text'>
                 <div className="social-icon">
-                  <a href="https://www.linkedin.com/in/pablo-manolaki-110522158/"><img src={navIcon1}/></a>
-                  <a href="https://github.com/manolonolo"><img src={navIcon2}/></a>
+                  <a href="https://www.linkedin.com/in/pablo-manolaki-110522158/"><img src={navIcon1} alt='Linked In'/></a>
+                  <a href="https://github.com/manolonolo"><img src={navIcon2} alt='Github'/></a>
                 </div>
               </span>
             </Navbar.Collapse>

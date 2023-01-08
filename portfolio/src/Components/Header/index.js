@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Col, Container, Nav, Row } from 'react-bootstrap';
 import { ArrowRightCircle } from 'react-bootstrap-icons';
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
 import headerImg from '../assets/img/header-img.svg';
 import'./index.css'
 
@@ -34,12 +36,18 @@ export default function Header() {
       <Container>
         <Row className='align-items-center'>
           <Col xs={12} md={6} xl={7}>
-            <span className='tagline'>Welcome to my portfolio</span>
-            <h1>{"Hi! I'm Pablo Manolaki, a "}<span className='wrap'>Full Stack Web Developer</span></h1>
-            <p>{text}</p>
-            <Nav.Link href="#contact" onClick={() => onUpdateActiveLink('contact')}>
-              <button href="#contact">Let's Connect!<ArrowRightCircle size={25}/></button>
-            </Nav.Link>
+            <TrackVisibility>
+            {({ isVisible }) =>
+              <div className={ isVisible ? "animate__animated animate__fadeInUp" : ""}>
+                <span className='tagline'>Welcome to my portfolio</span>
+                <h1>{"Hi! I'm Pablo Manolaki, a "}<span className='wrap'>Full Stack Web Developer</span></h1>
+                <p>{text}</p>
+                <Nav.Link href="#contact" onClick={() => onUpdateActiveLink('contact')}>
+                  <button>Let's Connect!<ArrowRightCircle size={25}/></button>
+                </Nav.Link>
+              </div> 
+            }
+            </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <img src={headerImg} alt='header img' />

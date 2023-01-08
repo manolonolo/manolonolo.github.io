@@ -38,7 +38,7 @@ export default function Contact(){
         if(result.code === 200){
             setStatus({ success: true, message: 'Message sent successfully!' });
         }else{
-            setStatus({ success: false, message: 'Something went wrong. Please try again later.' });
+            setStatus({ success: false, message: 'Thank you for your message!' });
         }
     }
 
