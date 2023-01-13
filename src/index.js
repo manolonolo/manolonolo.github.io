@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+//axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'portfolio-back-production-f4d1.up.railway.app';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
