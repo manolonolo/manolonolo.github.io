@@ -41,7 +41,7 @@ export default function Projects(){
                             <Tab.Container id="projects-tabs" defaultActiveKey='first'>
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                             <Nav.Item>
-                                <Nav.Link href="https://pi-countries-front-production.up.railway.app/" eventKey='first'>Countries App</Nav.Link>
+                                <Nav.Link eventKey='first'>Countries App</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link eventKey='second'>Tab Two</Nav.Link>
@@ -52,9 +52,11 @@ export default function Projects(){
                             </Nav>
                             <Tab.Content>
                             <Tab.Pane eventKey='first'>
-                                <Row className="justify-content-center">
-                                    <ProjectCard title={projects[0].title} description={projects[0].description} imgUrl={projects[0].imgUrl}/>
-                                </Row>
+                                <a href="https://pi-countries-front-production.up.railway.app/">
+                                    <Row className="justify-content-center">
+                                        <ProjectCard title={projects[0].title} description={projects[0].description} imgUrl={projects[0].imgUrl}/>
+                                    </Row>
+                                </a>
                             </Tab.Pane>
                             <Tab.Pane eventKey='second'>
                                 <Row className="justify-content-center">

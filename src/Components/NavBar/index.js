@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import navIcon1 from '../assets/img/nav-icon1.svg';
+import navIcon2 from '../assets/img/icons8-github.svg';
 
 export default function NavBar() {
 
@@ -40,8 +41,8 @@ export default function NavBar() {
               </Nav>
               <span className='nav-bar-text'>
                 <div className="social-icon">
-                  <a href="https://www.linkedin.com/in/pablo-manolaki-110522158/"><FontAwesomeIcon icon="fa-brands fa-linkedin" /></a>
-                  <a href="https://github.com/manolonolo"><FontAwesomeIcon icon="fa-brands fa-github" /></a>
+                  <a href="https://www.linkedin.com/in/pablo-manolaki-110522158/"><img src={navIcon1}/></a>
+                  <a href="https://github.com/manolonolo"><img src={navIcon2}/></a>
                 </div>
               </span>
             </Navbar.Collapse>

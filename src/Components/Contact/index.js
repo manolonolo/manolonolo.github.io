@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import contactImg from '../assets/img/contact-img.svg';
+import axios from "axios";
 
 export default function Contact(){
     const formInitialData = {
@@ -25,20 +26,20 @@ export default function Contact(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText("Sending...");
-        let response = await fetch('http://localhost:5000/contact', {
-            method: 'POST',
+        let response = await axios.post('/contact', {
             headers: {
                 'Content-Type': 'Application/json;charset=utf-8'
             },
-            body: JSON.stringify(formDetails)
+            body: formDetails
         });
         setButtonText('Send');
-        let result = response.json();
+        console.log(response);
+        console.log(formDetails);
         setFormDetails(formInitialData);
-        if(result.code === 200){
+        if(response.data.code === 200){
             setStatus({ success: true, message: 'Message sent successfully!' });
         }else{
-            setStatus({ success: false, message: 'Thank you for your message!' });
+            setStatus({ success: false, message: 'The message could not be sent. Please try again later.' });
         }
     }
 
